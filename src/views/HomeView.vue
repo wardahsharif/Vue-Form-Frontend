@@ -1,9 +1,15 @@
-<script setup>
-//import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
-  
-  </main>
+  <div class="about text-center m-5">
+    <h1>Welcome page</h1>
+  </div>
 </template>
+
+<style>
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
+</style>
