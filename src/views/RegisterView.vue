@@ -1,5 +1,27 @@
-<script scope>
+<script setup>
+import {ref} from 'vue'
+import axios from 'axios';
+import { useRouter } from 'vue-router'
 
+
+const router = useRouter()
+
+const formData = ref({
+  username: '',
+  email: '', 
+  password: ''  
+})
+
+const registerUser = async () => {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/register', formData.value);
+    console.log(response.data) 
+
+    router.push('/login')
+  } catch (error) {
+    console.error('Error registering user:', error) 
+  } 
+}
 
 </script>
 
