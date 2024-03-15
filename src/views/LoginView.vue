@@ -43,7 +43,7 @@ const goToForgotPassword = () => {
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" class="form-control" value="password" v-model="formData.password">
   </div>
-  <button type="submit" class="btn btn-secondary mb-5">Submit</button>
+  <button type="submit" class="btn btn-secondary mb-3">Submit</button> <br>
    <a href="#" @click.prevent="goToForgotPassword" class="forgot-password-link">Forgot Password?</a>
 </form>
   
