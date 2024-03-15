@@ -1,5 +1,30 @@
 <script setup>
+import {ref} from 'vue'
+import axios from 'axios';
+import { useRouter } from 'vue-router'
 
+
+const router = useRouter()
+
+const formData = ref({
+  email: '',
+  password: ''
+})
+
+const loginUser = async () => {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/login', formData.value)
+    console.log(response.data)
+
+    router.push('/dashboard')
+  } catch (error) {
+    console.error('Error logging in:', error)
+  }
+}
+
+const goToForgotPassword = () => {
+  router.push('/forgot-password')
+}
 </script>
 
 
